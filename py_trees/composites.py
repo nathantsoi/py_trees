@@ -62,7 +62,8 @@ class Composite(Behaviour):
     def __init__(self, name="", children=None, *args, **kwargs):
         super(Composite, self).__init__(name, *args, **kwargs)
         if children is not None:
-            map(self.add_child, children)
+            for child in children:
+                self.add_child(child)
         else:
             self.children = []
 
